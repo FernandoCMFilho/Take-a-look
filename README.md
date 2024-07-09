@@ -1,3 +1,200 @@
+# Take a Look
+#### Esse é meu trabalho final da materia de AP1, onde uma parte foi feita em portugol, e a outra em C
+### ![electro 15](https://github.com/FernandoCMFilho/Take-a-look/assets/54756245/0339e8a7-3132-41b9-97df-60de91fb2a38) Cadastro (Portugol)
+``` Portugol
+Algoritmo "cadastro"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 23/11/2022
+Var
+   // Seção de Declarações das variáveis
+   ndu,senha,nomeu,email,senhac:Caracter
+   opc,i,sexo,idd,info:inteiro
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   opc<-0
+   escreval("--------------------")
+   escreval("|   Bem vindo ao   |")
+   escreval("|    Take A Look   |")
+   escreval("--------------------")
+   repita                                 //Loop caso opção não seja 1, 2 ou 3
+      escreval("---------------------")
+      escreval("| Escolha uma opção |")
+      escreval("|     1-Login       |")
+      escreval("|     2-Cadastro    |")
+      escreval("|     3-Sair        |")
+      escreval("---------------------")
+      leia (opc)
+      se(opc=1) entao
+         repita            //Loop para caso nome de usuário ou senha incorretos
+
+
+            escreval("---------------------")
+            escreval("| Nome de usuario:  |")
+            escreval("---------------------")
+            leia(ndu)
+            escreval("---------------------")
+            escreval("| Digite sua senha: |")
+            escreval("---------------------")
+            leia(senha)
+            se ((ndu<>nomeu)ou(senha<>senhac)) entao
+               escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+               escreval("\Usuario ou senha incorreto(s)/")
+               escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+               opc<-0
+               repita     //Loop caso a pessoa escolha uma opção inválida
+                  escreval("--------------------------------")
+                  escreval("|  Escolha uma opção a seguir  |")
+                  escreval("|       1-Menu anterior        |")
+                  escreval("|       2-Fazer Cadastro       |")
+                  escreval("|       3-Sair                 |")
+                  escreval("--------------------------------")
+                  leia(opc)
+               ate ((opc=1)ou(opc=2)ou(opc=3))
+            senao
+            fimse
+         ate ((ndu=nomeu)e(senha=senhac))ou((opc=1)ou(opc=2)ou(opc=3))
+      fimse
+      se (opc=2) entao
+         escreval("--------------------")
+         escreval("|  Bem vindo ao    |")
+         escreval("|   Cadastro       |")
+         escreval("--------------------")
+         escreval("Crie um nome de usuario:")
+         leia(nomeu)
+         escreval("Seu email:")
+         leia(email)
+         repita
+            escreval("Sexo:")
+            escreval("1-Masculino, 2-Feminino, 3-Prefiro não dizer")
+            leia(sexo)
+            se ((sexo<>1)e(sexo<>2)e(sexo<>3)) entao
+               escreval("Por favor, digite um valor valido")
+            fimse
+         ate (sexo=1)ou(sexo=2)ou(sexo=3)
+         repita
+            escreval("Idade:")
+            leia(idd)
+            se (idd<=11) entao
+               escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+               escreval("|  Você precisa ter 12 anos ou  |")
+               escreval("|  mais para usar o Take a Look |")
+               escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+            fimse
+            se (idd>=129) entao
+               escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+               escreval("|  Insira uma idade valida  |")
+               escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+            fimse
+         até ((idd>=12)e(idd<130))
+         escreval("Crie uma senha:")
+         leia(senhac)
+         escreval("-----------------------")
+         escreval("| * Cadastro          |")
+         escreval("|     Realizado       |")
+         escreval("|       Com sucesso! *|")
+         escreval("-----------------------")
+      fimse
+      se (opc=3) entao
+fimalgoritmo
+senao
+fimse
+se (opc<>1)e(opc<>2)e(opc<>3) entao
+   escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxx")
+   escreval("| Insira uma opção valida |")
+   escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxx")
+fimse
+ate ((ndu=nomeu)e(senha=senhac)e(ndu<>0))    //     Menu no Code:Blocks (C) //
+repita                                       //-----------------------------//
+   escreval("--------------------------")    // 1-Ver Perfil                //
+   escreval("|      1-Ver perfil      |")    // 2-Meu guarda-roupa          //
+   escreval("|      2-Sair            |")    // 3-Voltar ao meno anterior   //
+   escreval("--------------------------")    //-----------------------------//
+   leia(i)
+   escolha (i)
+   caso 1
+      escreval("Usuario:",nomeu)
+      escreval("Email:",email)
+      se (sexo=1) entao
+         escreval("Sexo:Masculino")
+      fimse
+      se (sexo=2) entao
+         escreval("Sexo:Feminino")
+      fimse
+      se (sexo=3) entao
+         escreval("Sexo:Prefiro Não Dizer")
+      fimse
+      escreval("Idade:",idd)
+      escreval("Deseja mudar alguma informação?")
+      escreval("Pressione 1 para Sim")
+      escreval("Pressione qualquer tecla para não")
+      leia(info)
+      se (info=1) entao
+         repita
+            escreval("Qual informação deseja mudar?")
+            escreval("---------------------")
+            escreval("|   1-Usuario       |")
+            escreval("|   2-Email         |")
+            escreval("|   3-Sexo          |")
+            escreval("|   4-Idade         |")
+            escreval("|   5-Menu Anterior |")
+            escreval("---------------------")
+            leia(info)
+            escolha (info)
+            caso 1
+               escreval("Digite o novo nome de usuario:")
+               leia(nomeu)
+            caso 2
+               escreval("Digite o novo email:")
+               leia(email)
+            caso 3
+               repita
+                  escreval("Digite a nova opção:")
+                  escreval("1-Masculino, 2-Feminino, 3-Prefiro não dizer")
+                  leia(sexo)
+                  se (sexo<>1)e(sexo<>2)e(sexo<>3) entao
+                     escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+                     escreval("| Por favor, digite um valor valido |")
+                     escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+                  fimse
+               ate (sexo=1)ou(sexo=2)ou(sexo=3)
+            caso 4
+               repita
+                  escreval("Digite a nova idade:")
+                  leia(idd)
+                  se (idd<=11) entao
+                     escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+                     escreval("|  Você precisa ter 12 anos ou  |")
+                     escreval("|  mais para usar o Take a Look |")
+                     escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+                  fimse
+                  se (idd>=129) entao
+                     escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+                     escreval("|  Insira uma idade valida  |")
+                     escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+                  fimse
+               até ((idd>=12)e(idd<130))
+            caso 5
+            outrocaso
+               escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxx")
+               escreval("| Insira uma opção valida |")
+               escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxx")
+            fimescolha
+         ate (info=5)
+      senao
+      fimse
+   caso 2
+   outrocaso
+      escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxx")
+      escreval("| Insira uma opção valida |")
+      escreval("xxxxxxxxxxxxxxxxxxxxxxxxxxx")
+   fimescolha
+ate (i=2)
+Fimalgoritmo
+```
+
 ### ![electro 15](https://github.com/FernandoCMFilho/Take-a-look/assets/54756245/e6dcc298-6ab1-4378-94f2-7f79509d7cfb) Parte logica 
 ``` C
 #include <stdio.h>
